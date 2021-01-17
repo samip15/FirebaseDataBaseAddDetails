@@ -2,6 +2,7 @@ package com.example.firebaserealtimedb;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -44,8 +45,14 @@ public class ActivitySignUp extends AppCompatActivity {
                 String phoneNo = regPhoneNo.getText().toString();
                 String password = regPassword.getText().toString();
                 UserHelperClass helperClass = new UserHelperClass(name, username, email, phoneNo, password);
-                reference.child(phoneNo).setValue(helperClass);
+                reference.child("Users").setValue(helperClass);
             }
         });//Register Button method end
+        regToLoginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),ViewUser.class));
+            }
+        });
     }
 }

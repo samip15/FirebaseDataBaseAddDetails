@@ -97,6 +97,6 @@
             android:id="@+id/reg_login_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Already have an account? LogIn" />
+            android:text="View Your Database Values" />
     </LinearLayout>
 </LinearLayout>
